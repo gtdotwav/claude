@@ -27,7 +27,7 @@ import {
   X,
   Plus,
   AlertTriangle,
-} from 'lucide-react';
+} from '@/components/icons';
 
 // ─── Media Type Icon ────────────────────────────────────────
 

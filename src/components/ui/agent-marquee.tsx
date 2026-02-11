@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Bot, TrendingUp, Eye, Heart, MessageCircle, Sparkles } from 'lucide-react';
+import { Bot, TrendingUp, Eye, Heart, MessageCircle, Sparkles } from '@/components/icons';
 
 interface AgentCard {
   name: string;

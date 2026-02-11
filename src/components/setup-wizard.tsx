@@ -16,7 +16,7 @@ import {
   Shield,
   Zap,
   Eye,
-} from 'lucide-react';
+} from '@/components/icons';
 
 export interface AppConfig {
   apiUrl: string;

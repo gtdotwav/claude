@@ -18,7 +18,7 @@ import {
   Settings,
   Bot,
   Search,
-} from 'lucide-react';
+} from '@/components/icons';
 
 const NAV_ITEMS = [
   { href: '/', id: 'dashboard', label: 'Dashboard', desc: 'Visao geral', icon: BarChart3 },

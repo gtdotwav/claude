@@ -31,7 +31,7 @@ import {
   Loader2,
   ArrowUpRight,
   ArrowDownRight,
-} from 'lucide-react';
+} from '@/components/icons';
 
 // ─── Types ──────────────────────────────────────────────────
 

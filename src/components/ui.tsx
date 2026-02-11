@@ -2,7 +2,7 @@
 
 import { useState, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
-import { HelpCircle } from 'lucide-react';
+import { HelpCircle } from '@/components/icons';
 
 export function Badge({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (

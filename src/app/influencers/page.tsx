@@ -8,7 +8,7 @@ import {
   SoraPlaceholder,
   AIStats,
 } from '@/components/influencer-components';
-import { Bot, Sparkles } from 'lucide-react';
+import { Bot, Sparkles } from '@/components/icons';
 
 export default function InfluencersPage() {
   const [selectedNiche, setSelectedNiche] = useState<string | null>(null);

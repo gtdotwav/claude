@@ -23,7 +23,7 @@ import {
   Shield,
   Zap,
   Eye,
-} from 'lucide-react';
+} from '@/components/icons';
 
 export default function AnalyticsPage() {
   const [profile, setProfile] = useState<ProfileData | null>(null);

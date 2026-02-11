@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Bot, Zap, MessageCircle, BarChart3, ArrowRight, Sparkles, ChevronDown } from 'lucide-react';
+import { Bot, Zap, MessageCircle, BarChart3, ArrowRight, Sparkles, ChevronDown } from '@/components/icons';
 import { AIAlpha } from './ai-voice-input';
 import { AgentMarquee } from './agent-marquee';
 

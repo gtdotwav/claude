@@ -20,7 +20,7 @@ import {
   Clock,
   Plus,
   Sparkles,
-} from 'lucide-react';
+} from '@/components/icons';
 
 type Tab = 'calendar' | 'grid' | 'queue';
 

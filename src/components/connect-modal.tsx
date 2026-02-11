@@ -14,7 +14,7 @@ import {
   Zap,
   Sparkles,
   AlertTriangle,
-} from 'lucide-react';
+} from '@/components/icons';
 
 interface ConnectModalProps {
   onClose: () => void;

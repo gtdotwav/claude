@@ -14,7 +14,7 @@ import {
   Lock,
   Zap,
   ExternalLink,
-} from 'lucide-react';
+} from '@/components/icons';
 
 // ─── Niche Filter ───────────────────────────────────────────
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { Mic, Send, Sparkles, ArrowRight, Volume2, VolumeX, Loader2 } from 'lucide-react';
+import { Mic, Send, Sparkles, ArrowRight, Volume2, VolumeX, Loader2 } from '@/components/icons';
 
 interface AIAlphaProps {
   className?: string;
