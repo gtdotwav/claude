@@ -5,6 +5,7 @@ import { generateMockComments } from '@/lib/mock-data';
 import { CLS, STAT } from '@/lib/design-tokens';
 import { Badge, Tooltip, HelpBadge, EmptyState, SentBar, IntBar } from '@/components/ui';
 import AiExplainer from '@/components/ai-explainer';
+import { MessageCircle } from '@/components/icons';
 import type { MockComment } from '@/lib/mock-data';
 
 export default function CommentsPage() {
@@ -127,7 +128,7 @@ export default function CommentsPage() {
             </tbody>
           </table>
         </div>
-        {filtered.length === 0 && <EmptyState icon="💬" title="Nenhum comentario" description="Ajuste os filtros." />}
+        {filtered.length === 0 && <EmptyState icon={<MessageCircle size={48} />} title="Nenhum comentario" description="Ajuste os filtros." />}
       </div>
     </div>
   );

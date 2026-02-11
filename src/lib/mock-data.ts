@@ -187,18 +187,18 @@ export interface MockPost {
 }
 
 const POST_CAPTIONS = [
-  'Novidade chegando! Fique ligado nas nossas ofertas exclusivas 🔥',
-  'Transforme sua rotina com nossos produtos. Qualidade que voce merece ✨',
-  'Resultados que falam por si! Confira o depoimento da @cliente_feliz 💪',
-  'Lancamento exclusivo! Disponivel por tempo limitado. Corre! 🚀',
-  'Sabado de cuidados pessoais. Qual e o seu favorito? Conta pra gente! 💬',
-  'Bastidores da producao — transparencia e qualidade em cada etapa 🏭',
-  'Promocao de verao! Ate 40% OFF em produtos selecionados ☀️',
-  'Dica do especialista: como usar nosso produto para melhores resultados 📋',
-  'Obrigado por 10k seguidores! Voces sao incriveis 🎉',
-  'Novo tutorial no feed! Passo a passo completo. Salva pra depois! 📌',
-  'Parceria especial com @influencer — conteudo exclusivo essa semana 🤝',
-  'Atras das cameras: conheca nossa equipe de producao 👥',
+  'Novidade chegando! Fique ligado nas nossas ofertas exclusivas',
+  'Transforme sua rotina com nossos produtos. Qualidade que voce merece',
+  'Resultados que falam por si! Confira o depoimento da @cliente_feliz',
+  'Lancamento exclusivo! Disponivel por tempo limitado. Corre!',
+  'Sabado de cuidados pessoais. Qual e o seu favorito? Conta pra gente!',
+  'Bastidores da producao — transparencia e qualidade em cada etapa',
+  'Promocao de verao! Ate 40% OFF em produtos selecionados',
+  'Dica do especialista: como usar nosso produto para melhores resultados',
+  'Obrigado por 10k seguidores! Voces sao incriveis',
+  'Novo tutorial no feed! Passo a passo completo. Salva pra depois!',
+  'Parceria especial com @influencer — conteudo exclusivo essa semana',
+  'Atras das cameras: conheca nossa equipe de producao',
 ];
 
 const POST_HASHTAGS = [

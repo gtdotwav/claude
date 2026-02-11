@@ -14,7 +14,24 @@ import {
   Lock,
   Zap,
   ExternalLink,
+  Laptop,
+  Stethoscope,
+  Palette,
+  Running,
+  BookOpen,
+  Briefcase,
 } from '@/components/icons';
+
+// ─── Icon mapping for niches ────────────────────────────────────
+const NICHE_ICONS: Record<string, React.ComponentType<any>> = {
+  Laptop,
+  Stethoscope,
+  Palette,
+  Sparkles,
+  Running,
+  BookOpen,
+  Briefcase,
+};
 
 // ─── Niche Filter ───────────────────────────────────────────
 
@@ -37,25 +54,29 @@ export function NicheFilter({ selected, onChange }: NicheFilterProps) {
       >
         Todos
       </button>
-      {Object.entries(INFLUENCER_NICHES).map(([key, niche]) => (
-        <button
-          key={key}
-          onClick={() => onChange(key)}
-          className={cn(
-            'px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all border',
-            selected === key
-              ? 'border-opacity-30 bg-opacity-10'
-              : 'bg-white/[0.04] text-white/30 border-white/[0.06] hover:bg-white/[0.06]'
-          )}
-          style={selected === key ? {
-            backgroundColor: `${niche.c}15`,
-            color: niche.c,
-            borderColor: `${niche.c}30`,
-          } : undefined}
-        >
-          {niche.emoji} {niche.l}
-        </button>
-      ))}
+      {Object.entries(INFLUENCER_NICHES).map(([key, niche]) => {
+        const NIcon = NICHE_ICONS[niche.icon];
+        return (
+          <button
+            key={key}
+            onClick={() => onChange(key)}
+            className={cn(
+              'px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all border flex items-center gap-1.5',
+              selected === key
+                ? 'border-opacity-30 bg-opacity-10'
+                : 'bg-white/[0.04] text-white/30 border-white/[0.06] hover:bg-white/[0.06]'
+            )}
+            style={selected === key ? {
+              backgroundColor: `${niche.c}15`,
+              color: niche.c,
+              borderColor: `${niche.c}30`,
+            } : undefined}
+          >
+            {NIcon && <NIcon size={13} style={{ color: niche.c }} />}
+            {niche.l}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -113,15 +134,21 @@ export function InfluencerCard({ influencer }: InfluencerCardProps) {
 
         {/* Niche tag */}
         <div className="mt-3 flex items-center gap-2">
-          <span
-            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-semibold"
-            style={{
-              backgroundColor: `${niche?.c || '#666'}12`,
-              color: niche?.c || '#666',
-            }}
-          >
-            {niche?.emoji} {niche?.l}
-          </span>
+          {(() => {
+            const NIcon = NICHE_ICONS[niche?.icon || 'Sparkles'];
+            return (
+              <span
+                className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-semibold"
+                style={{
+                  backgroundColor: `${niche?.c || '#666'}12`,
+                  color: niche?.c || '#666',
+                }}
+              >
+                {NIcon && <NIcon size={11} style={{ color: niche?.c }} />}
+                {niche?.l}
+              </span>
+            );
+          })()}
           <span className="text-[9px] text-white/30">{influencer.style}</span>
         </div>
 

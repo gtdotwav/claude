@@ -113,5 +113,18 @@ export const GitBranch = solar('solar:branching-paths-up-bold', 'GitBranch');
 export const Smartphone = solar('solar:smartphone-bold', 'Smartphone');
 export const Monitor = solar('solar:monitor-bold', 'Monitor');
 
+// ─── Niche / Category ──────────────────────────────────────────────
+export const Laptop = solar('solar:laptop-bold', 'Laptop');
+export const Stethoscope = solar('solar:stethoscope-bold', 'Stethoscope');
+export const Palette = solar('solar:pallete-2-bold', 'Palette');
+export const Running = solar('solar:running-2-bold', 'Running');
+export const BookOpen = solar('solar:book-2-bold', 'BookOpen');
+export const Briefcase = solar('solar:case-bold', 'Briefcase');
+export const Lightbulb = solar('solar:lightbulb-bold', 'Lightbulb');
+
+// ─── Agent Avatars ──────────────────────────────────────────────────
+export const Moon = solar('solar:moon-bold', 'Moon');
+export const MagicWand = solar('solar:magic-stick-3-bold', 'MagicWand');
+
 // ─── Instagram (Solar set includes it) ──────────────────────────────
 export const Instagram = solar('mdi:instagram', 'Instagram');

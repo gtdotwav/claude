@@ -90,12 +90,12 @@ function handleInfluencerComparison(query: string): AIAlphaResponse {
   const topInfluencer = influencers[0];
   const secondInfluencer = influencers[1];
 
-  const text = `📊 **Comparação de Influenciadores**\n\n` +
-    `🥇 **${topInfluencer.name}** lidera em engajamento:\n` +
+  const text = `**Comparação de Influenciadores**\n\n` +
+    `**${topInfluencer.name}** lidera em engajamento:\n` +
     `   • Followers: ${(topInfluencer.followerCount / 1000).toFixed(1)}K\n` +
     `   • Taxa de Engajamento: ${(topInfluencer.engagementRate * 100).toFixed(2)}%\n` +
     `   • Nicho: ${topInfluencer.niche}\n\n` +
-    `🥈 **${secondInfluencer.name}** em segundo lugar:\n` +
+    `**${secondInfluencer.name}** em segundo lugar:\n` +
     `   • Followers: ${(secondInfluencer.followerCount / 1000).toFixed(1)}K\n` +
     `   • Taxa de Engajamento: ${(secondInfluencer.engagementRate * 100).toFixed(2)}%\n` +
     `   • Nicho: ${secondInfluencer.niche}`;
@@ -117,7 +117,7 @@ function handleBestPostingTime(): AIAlphaResponse {
 
   if (publishedPosts.length === 0) {
     return {
-      text: '📅 Ainda não há posts publicados. Comece a agendar conteúdo para análises futuras!',
+      text: 'Ainda não há posts publicados. Comece a agendar conteúdo para análises futuras!',
       type: 'insight',
     };
   }
@@ -133,12 +133,12 @@ function handleBestPostingTime(): AIAlphaResponse {
   const hour = parseInt(bestHour[0]);
   const timeStr = `${String(hour).padStart(2, '0')}:00`;
 
-  const text = `⏰ **Melhor Horário para Postar**\n\n` +
-    `📍 Baseado em ${publishedPosts.length} posts analisados:\n\n` +
-    `🚀 **${timeStr}** é o melhor horário!\n` +
+  const text = `**Melhor Horário para Postar**\n\n` +
+    `Baseado em ${publishedPosts.length} posts analisados:\n\n` +
+    `**${timeStr}** é o melhor horário!\n` +
     `   • ${bestHour[1]} posts publicados neste horário\n` +
     `   • Análise de 30 dias de dados\n\n` +
-    `💡 Dica: Posts publicados às ${timeStr} tendem a ter maior alcance inicial.`;
+    `Dica: Posts publicados às ${timeStr} tendem a ter maior alcance inicial.`;
 
   return {
     text,
@@ -174,20 +174,20 @@ function handleCampaignRecommendation(query: string): AIAlphaResponse {
 
   if (candidates.length === 0) {
     return {
-      text: '🎯 Nenhum influenciador disponível para este nicho no momento.',
+      text: 'Nenhum influenciador disponível para este nicho no momento.',
       type: 'recommendation',
     };
   }
 
   const topCandidate = candidates[0];
-  const text = `🎯 **Recomendação de Parceria**\n\n` +
-    `✨ Melhor fit para sua campanha:\n\n` +
-    `👑 **${topCandidate.name}**\n` +
+  const text = `**Recomendação de Parceria**\n\n` +
+    `Melhor fit para sua campanha:\n\n` +
+    `**${topCandidate.name}**\n` +
     `   • Followers: ${(topCandidate.followerCount / 1000).toFixed(1)}K\n` +
     `   • Engajamento: ${(topCandidate.engagementRate * 100).toFixed(2)}%\n` +
     `   • Estilo: ${topCandidate.style}\n` +
     `   • Bio: ${topCandidate.bio}\n\n` +
-    `💪 Por que escolher? Alta taxa de engajamento e audiência qualificada.`;
+    `Por que escolher? Alta taxa de engajamento e audiência qualificada.`;
 
   return {
     text,
@@ -204,14 +204,14 @@ function handleCampaignRecommendation(query: string): AIAlphaResponse {
  */
 function handleWeeklySummary(): AIAlphaResponse {
   const metrics = DEMO_METRICS;
-  const text = `📊 **Resumo de Insights — Últimos 7 Dias**\n\n` +
-    `📝 **Comentários**: ${metrics.totalComments} processados\n` +
-    `💬 **DMs**: ${metrics.totalDMs} conversas\n` +
-    `🤖 **Auto-respostas**: ${metrics.totalAutoReplies} enviadas\n` +
-    `⚠️ **Escalados**: ${metrics.totalEscalated}\n\n` +
-    `📈 **Conversion Rate**: ${(metrics.conversionRate * 100).toFixed(1)}%\n` +
-    `⏱️ **Tempo Médio de Resposta**: ${metrics.responseTimeAvg}s\n\n` +
-    `🏆 **Top Classifications**:\n` +
+  const text = `**Resumo de Insights — Últimos 7 Dias**\n\n` +
+    `**Comentários**: ${metrics.totalComments} processados\n` +
+    `**DMs**: ${metrics.totalDMs} conversas\n` +
+    `**Auto-respostas**: ${metrics.totalAutoReplies} enviadas\n` +
+    `**Escalados**: ${metrics.totalEscalated}\n\n` +
+    `**Conversion Rate**: ${(metrics.conversionRate * 100).toFixed(1)}%\n` +
+    `**Tempo Médio de Resposta**: ${metrics.responseTimeAvg}s\n\n` +
+    `**Top Classifications**:\n` +
     `   • ${metrics.classifications[0].cls}: ${metrics.classifications[0].count}\n` +
     `   • ${metrics.classifications[1].cls}: ${metrics.classifications[1].count}\n` +
     `   • ${metrics.classifications[2].cls}: ${metrics.classifications[2].count}`;
@@ -246,7 +246,7 @@ function handleTopPosts(query: string): AIAlphaResponse {
 
   if (publishedPosts.length === 0) {
     return {
-      text: '📍 Nenhum post publicado ainda.',
+      text: 'Nenhum post publicado ainda.',
       type: 'insight',
     };
   }
@@ -255,15 +255,15 @@ function handleTopPosts(query: string): AIAlphaResponse {
   const metricLabel = sortBy === 'saves' ? 'Salvamentos' : sortBy === 'reach' ? 'Alcance' : 'Engajamento';
   const metricValue = sortBy === 'saves' ? topPost.saves : sortBy === 'reach' ? topPost.reach : (topPost.engagement * 100).toFixed(1);
 
-  const text = `🔥 **Melhor Post**\n\n` +
+  const text = `**Melhor Post**\n\n` +
     `"${topPost.caption.slice(0, 60)}..."\n\n` +
-    `📊 Métricas:\n` +
+    `Métricas:\n` +
     `   • ${metricLabel}: ${metricValue}${sortBy !== 'saves' ? (sortBy === 'reach' ? '' : '%') : ''}\n` +
     `   • Alcance: ${topPost.reach}\n` +
     `   • Impressões: ${topPost.impressions}\n` +
     `   • Comentários: ${topPost.commentCount}\n` +
     `   • Tipo: ${topPost.mediaType}\n\n` +
-    `✨ Hashtags: ${topPost.hashtags.join(', ')}`;
+    `Hashtags: ${topPost.hashtags.join(', ')}`;
 
   return {
     text,
@@ -289,9 +289,9 @@ function handleAccountMetrics(): AIAlphaResponse {
     { comments: 0, dms: 0, replies: 0 }
   );
 
-  const text = `👥 **Contas Conectadas**\n\n` +
-    `${accounts.map((a) => `✅ @${a.username}\n   • Comentários: ${a.totalCommentsProcessed}\n   • DMs: ${a.totalDmsProcessed}\n   • Auto-respostas: ${a.totalAutoReplies}`).join('\n\n')}\n\n` +
-    `📈 **Totais**:\n` +
+  const text = `**Contas Conectadas**\n\n` +
+    `${accounts.map((a) => `@${a.username}\n   • Comentários: ${a.totalCommentsProcessed}\n   • DMs: ${a.totalDmsProcessed}\n   • Auto-respostas: ${a.totalAutoReplies}`).join('\n\n')}\n\n` +
+    `**Totais**:\n` +
     `   • Comentários processados: ${totals.comments}\n` +
     `   • DMs processadas: ${totals.dms}\n` +
     `   • Auto-respostas enviadas: ${totals.replies}`;
@@ -311,7 +311,7 @@ function handleAccountMetrics(): AIAlphaResponse {
  */
 function handleAutomationRules(): AIAlphaResponse {
   const activeRules = DEMO_RULES.filter((r) => r.isActive);
-  const text = `⚙️ **Regras de Automação Ativas**\n\n` +
+  const text = `**Regras de Automação Ativas**\n\n` +
     `${activeRules.map((r) => `• **${r.name}**\n  Prioridade: ${r.priority} | Matches hoje: ${r.repliesToday}`).join('\n\n')}\n\n` +
     `Total: ${activeRules.length} regras ativas.`;
 
@@ -330,7 +330,7 @@ function handleAutomationRules(): AIAlphaResponse {
  */
 function handleGeneralSummary(): AIAlphaResponse {
   const metrics = DEMO_METRICS;
-  const text = `📊 **Dashboard AI Alpha**\n\n` +
+  const text = `**Dashboard AI Alpha**\n\n` +
     `Você pode me fazer perguntas como:\n\n` +
     `• "Qual influencer teve mais engajamento?"\n` +
     `• "Melhor horário pra postar?"\n` +
@@ -353,7 +353,7 @@ function handleGeneralSummary(): AIAlphaResponse {
 export function processAIAlphaQuery(query: string): AIAlphaResponse {
   if (!query || query.trim().length === 0) {
     return {
-      text: '💬 Digite uma pergunta sobre seus dados!',
+      text: 'Digite uma pergunta sobre seus dados!',
       type: 'insight',
     };
   }

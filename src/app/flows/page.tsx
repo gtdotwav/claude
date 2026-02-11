@@ -3,6 +3,7 @@
 import { DEMO_FLOWS } from '@/lib/mock-data';
 import { FTRG, FST } from '@/lib/design-tokens';
 import { Badge, Tooltip, Toggle, InfoCard } from '@/components/ui';
+import { GitBranch, Bot } from '@/components/icons';
 
 export default function FlowsPage() {
   return (
@@ -17,7 +18,7 @@ export default function FlowsPage() {
         </button>
       </div>
 
-      <InfoCard icon="🔄" title="Como funcionam?">
+      <InfoCard icon={<GitBranch size={48} />} title="Como funcionam?">
         Quando uma DM chega, o sistema verifica qual fluxo ativar (por trigger). O fluxo guia a conversa passo a passo:
         envia perguntas, coleta respostas, toma decisoes. Se o caso for complexo, escala para humano automaticamente.
       </InfoCard>
@@ -45,7 +46,7 @@ export default function FlowsPage() {
                     <Badge className="bg-white/[0.06] text-white/40 border-white/[0.06]">{f.triggerKeywords.length} keywords</Badge>
                   </Tooltip>
                 )}
-                {f.useAi && <Badge className="bg-violet-500/10 text-violet-400 border-violet-500/20">🤖 IA</Badge>}
+                {f.useAi && <Badge className="bg-violet-500/10 text-violet-400 border-violet-500/20 flex items-center gap-1"><Bot size={14} /> IA</Badge>}
                 <Badge className="bg-white/[0.06] text-white/40 border-white/[0.06]">{f.steps} etapas</Badge>
               </div>
 

@@ -73,12 +73,12 @@ export const POST_METRICS: Record<string, { l: string; icon: string; fmt: (v: nu
   saves:       { l: 'Salvamentos',   icon: 'bookmark',   fmt: (v) => String(v) },
 };
 
-export const INFLUENCER_NICHES: Record<string, { l: string; c: string; emoji: string }> = {
-  tech:       { l: 'Tecnologia',    c: '#3b82f6', emoji: '💻' },
-  health:     { l: 'Saude',         c: '#22c55e', emoji: '🏥' },
-  beauty:     { l: 'Beleza',        c: '#ec4899', emoji: '💄' },
-  lifestyle:  { l: 'Lifestyle',     c: '#f59e0b', emoji: '✨' },
-  fitness:    { l: 'Fitness',       c: '#ef4444', emoji: '💪' },
-  education:  { l: 'Educacao',      c: '#8b5cf6', emoji: '📚' },
-  business:   { l: 'Negocios',      c: '#06b6d4', emoji: '💼' },
+export const INFLUENCER_NICHES: Record<string, { l: string; c: string; icon: string }> = {
+  tech:       { l: 'Tecnologia',    c: '#3b82f6', icon: 'Laptop' },
+  health:     { l: 'Saude',         c: '#22c55e', icon: 'Stethoscope' },
+  beauty:     { l: 'Beleza',        c: '#ec4899', icon: 'Palette' },
+  lifestyle:  { l: 'Lifestyle',     c: '#f59e0b', icon: 'Sparkles' },
+  fitness:    { l: 'Fitness',       c: '#ef4444', icon: 'Running' },
+  education:  { l: 'Educacao',      c: '#8b5cf6', icon: 'BookOpen' },
+  business:   { l: 'Negocios',      c: '#06b6d4', icon: 'Briefcase' },
 };

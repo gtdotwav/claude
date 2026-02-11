@@ -218,7 +218,7 @@ export function AIAlpha({ className, onSubmit }: AIAlphaProps) {
           ...prev,
           {
             role: 'ai',
-            content: '❌ Erro ao processar sua pergunta. Tente novamente.',
+            content: 'Erro ao processar sua pergunta. Tente novamente.',
             type: 'error',
           },
         ]);

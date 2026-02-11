@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { generateMockSessions } from '@/lib/mock-data';
 import { SSTAT } from '@/lib/design-tokens';
 import { Badge, EmptyState } from '@/components/ui';
+import { Bot, Inbox } from '@/components/icons';
 import type { MockSession } from '@/lib/mock-data';
 
 export default function InboxPage() {
@@ -26,7 +27,7 @@ export default function InboxPage() {
       <div>
         <h1 className="text-2xl font-bold text-white/90">Inbox DMs</h1>
         <p className="text-sm text-white/40">
-          Mensagens com <strong className="text-[#E1306C]">🤖</strong> foram respondidas pela IA. Clique <strong>&quot;Assumir&quot;</strong> para controle humano.
+          Mensagens com <Bot className="inline text-[#E1306C]" size={16} /> foram respondidas pela IA. Clique <strong>&quot;Assumir&quot;</strong> para controle humano.
         </p>
       </div>
 
@@ -114,7 +115,7 @@ export default function InboxPage() {
                         m.dir === 'out' ? 'bg-[#E1306C] text-white rounded-br-md' : 'bg-white/[0.06] text-white/90 rounded-bl-md'
                       }`}
                     >
-                      {m.isAi && <p className="text-[10px] font-medium mb-1 opacity-60">🤖 Resposta IA</p>}
+                      {m.isAi && <p className="text-[10px] font-medium mb-1 opacity-60 flex items-center gap-1"><Bot size={12} /> Resposta IA</p>}
                       <p className="text-sm">{m.text}</p>
                       <p className={`text-xs mt-1 ${m.dir === 'out' ? 'text-white/50' : 'text-white/40'}`}>
                         {new Date(m.time).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
@@ -130,13 +131,13 @@ export default function InboxPage() {
                 {sel.status !== 'human_takeover' && (
                   <>
                     <span>|</span>
-                    <span className="text-[#E1306C] font-medium">🤖 IA respondendo</span>
+                    <span className="text-[#E1306C] font-medium flex items-center gap-1"><Bot size={12} /> IA respondendo</span>
                   </>
                 )}
               </div>
             </>
           ) : (
-            <EmptyState icon="📩" title="Selecione uma conversa" description="Clique em uma sessao a esquerda. Mensagens com 🤖 foram da IA." />
+            <EmptyState icon={<Inbox size={48} />} title="Selecione uma conversa" description="Clique em uma sessao a esquerda. Mensagens com IA foram respondidas automaticamente." />
           )}
         </div>
       </div>

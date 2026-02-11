@@ -1,11 +1,11 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Bot, TrendingUp, Eye, Heart, MessageCircle, Sparkles } from '@/components/icons';
+import { Bot, TrendingUp, Eye, Heart, MessageCircle, Sparkles, Moon, MagicWand, Zap } from '@/components/icons';
 
 interface AgentCard {
   name: string;
-  avatar: string;
+  avatarIcon: React.ComponentType<any>;
   role: string;
   thought: string;
   metric: string;
@@ -17,7 +17,7 @@ interface AgentCard {
 const AGENTS: AgentCard[] = [
   {
     name: 'Luna',
-    avatar: '🌙',
+    avatarIcon: Moon,
     role: 'Classificadora',
     thought: 'Detectei 12 comentarios de alta intencao de compra nos ultimos 30min',
     metric: '98.2%',
@@ -27,7 +27,7 @@ const AGENTS: AgentCard[] = [
   },
   {
     name: 'Aria',
-    avatar: '✨',
+    avatarIcon: Sparkles,
     role: 'Auto-Reply',
     thought: 'Respondi 47 comentarios automaticamente. 3 escalados para humano.',
     metric: '2.1s',
@@ -37,7 +37,7 @@ const AGENTS: AgentCard[] = [
   },
   {
     name: 'Nova',
-    avatar: '🔮',
+    avatarIcon: MagicWand,
     role: 'DM Manager',
     thought: 'Conversa com @maria_store encaminhada: cliente pediu catalogo PDF',
     metric: '23',
@@ -47,7 +47,7 @@ const AGENTS: AgentCard[] = [
   },
   {
     name: 'Zenith',
-    avatar: '⚡',
+    avatarIcon: Zap,
     role: 'Analytics',
     thought: 'Engagement subiu 34% esta semana. Melhor horario: terça 19h',
     metric: '+34%',
@@ -57,7 +57,7 @@ const AGENTS: AgentCard[] = [
   },
   {
     name: 'Iris',
-    avatar: '👁',
+    avatarIcon: Eye,
     role: 'Insights',
     thought: 'Hashtag #oferta gerou 3x mais salvamentos que a media',
     metric: '1.2k',
@@ -67,7 +67,7 @@ const AGENTS: AgentCard[] = [
   },
   {
     name: 'Pulse',
-    avatar: '💗',
+    avatarIcon: Heart,
     role: 'Sentimento',
     thought: 'Sentimento geral: 87% positivo. Reclamacoes caíram 22% no mes.',
     metric: '87%',
@@ -79,6 +79,7 @@ const AGENTS: AgentCard[] = [
 
 function AgentCardComponent({ agent }: { agent: AgentCard }) {
   const Icon = agent.icon;
+  const AvatarIcon = agent.avatarIcon;
   return (
     <div className="flex-shrink-0 w-[320px] group">
       <div
@@ -93,10 +94,10 @@ function AgentCardComponent({ agent }: { agent: AgentCard }) {
         {/* Header */}
         <div className="flex items-center gap-3 mb-3">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-lg"
+            className="w-10 h-10 rounded-xl flex items-center justify-center"
             style={{ backgroundColor: `${agent.color}15` }}
           >
-            {agent.avatar}
+            <AvatarIcon size={18} style={{ color: agent.color }} />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">

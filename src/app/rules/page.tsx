@@ -3,6 +3,7 @@
 import { DEMO_RULES } from '@/lib/mock-data';
 import { TRG, ACT } from '@/lib/design-tokens';
 import { Badge, Tooltip, Toggle, InfoCard } from '@/components/ui';
+import { Zap, Bot } from '@/components/icons';
 
 export default function RulesPage() {
   return (
@@ -17,7 +18,7 @@ export default function RulesPage() {
         </button>
       </div>
 
-      <InfoCard icon="⚡" title="Pipeline de processamento">
+      <InfoCard icon={<Zap size={48} />} title="Pipeline de processamento">
         1) Comentario chega → 2) IA classifica → 3) Regras sao percorridas por prioridade → 4) Primeira match executa a acao →
         5) Prospect e atualizado no CRM com tags. O <strong>delay humanizado</strong> faz a resposta parecer natural.
       </InfoCard>
@@ -54,10 +55,10 @@ export default function RulesPage() {
                 </Badge>
                 {r.useAiPersonalization && (
                   <Tooltip text="IA personaliza com base no contexto">
-                    <Badge className="bg-violet-500/10 text-violet-400 border-violet-500/20">🤖 IA</Badge>
+                    <Badge className="bg-violet-500/10 text-violet-400 border-violet-500/20 flex items-center gap-1"><Bot size={14} /> IA</Badge>
                   </Tooltip>
                 )}
-                <Badge className="bg-white/[0.04] text-white/40 border-white/[0.06]">⏱ {r.delaySeconds}s</Badge>
+                <Badge className="bg-white/[0.04] text-white/40 border-white/[0.06]">{r.delaySeconds}s delay</Badge>
               </div>
 
               {r.replyTemplates?.length > 0 && (

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useApp } from '@/context/app-context';
 import { Badge, HelpBadge, Toggle, EmptyState, InfoCard } from '@/components/ui';
 import ConnectModal from '@/components/connect-modal';
+import { Smartphone, Link2, MessageCircle, Inbox, Bot } from '@/components/icons';
 
 export default function SettingsPage() {
   const { accounts, setAccounts, isDemo, config } = useApp();
@@ -43,7 +44,7 @@ export default function SettingsPage() {
 
       {accounts.length === 0 ? (
         <EmptyState
-          icon="📱"
+          icon={<Smartphone size={48} />}
           title="Nenhuma conta conectada"
           description="Conecte sua conta Instagram Business para a IA comecar a responder automaticamente."
           action="Conectar Primeira Conta"
@@ -51,7 +52,7 @@ export default function SettingsPage() {
         />
       ) : (
         <>
-          <InfoCard icon="🔗" title="Ao conectar, a IA comeca automaticamente">
+          <InfoCard icon={<Link2 size={48} />} title="Ao conectar, a IA comeca automaticamente">
             Quando voce conecta uma conta e ativa os recursos abaixo, a IA passa a: classificar comentarios em tempo real,
             responder automaticamente conforme as regras, gerenciar DMs com fluxos conversacionais, e registrar tudo no CRM.
             {isDemo && (
@@ -111,12 +112,12 @@ export default function SettingsPage() {
                           <h4 className="text-sm font-semibold text-white/90 mb-3">Estatisticas</h4>
                           <div className="grid grid-cols-3 gap-4">
                             {[
-                              ['Comentarios', a.totalCommentsProcessed, '💬'],
-                              ['DMs', a.totalDmsProcessed, '📩'],
-                              ['Auto-replies', a.totalAutoReplies, '🤖'],
+                              ['Comentarios', a.totalCommentsProcessed, <MessageCircle key="mc" size={32} className="text-white/70 mx-auto" />],
+                              ['DMs', a.totalDmsProcessed, <Inbox key="ib" size={32} className="text-white/70 mx-auto" />],
+                              ['Auto-replies', a.totalAutoReplies, <Bot key="bt" size={32} className="text-white/70 mx-auto" />],
                             ].map(([l, v, e]) => (
                               <div key={String(l)} className="bg-white/[0.04] rounded-xl p-4 text-center border border-white/[0.06]">
-                                <span className="text-2xl">{e}</span>
+                                <div className="text-2xl">{e}</div>
                                 <div className="text-xl font-bold text-white/90 mt-1">
                                   {typeof v === 'number' ? v.toLocaleString() : v}
                                 </div>

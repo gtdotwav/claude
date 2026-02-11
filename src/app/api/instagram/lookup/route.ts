@@ -181,7 +181,7 @@ function generateDemoProfile(handle: string): NormalizedProfile {
   return {
     username: handle,
     fullName: handle.charAt(0).toUpperCase() + handle.slice(1).replace(/[._]/g, ' '),
-    biography: 'Perfil de demonstracao — conecte sua API key ScrapeCreators para dados reais.\n📍 Brasil | 🚀 Empreendedor Digital',
+    biography: 'Perfil de demonstracao — conecte sua API key ScrapeCreators para dados reais.\nBrasil | Empreendedor Digital',
     profilePicUrl: `https://placehold.co/200x200/E1306C/fff?text=${handle.slice(0, 2).toUpperCase()}`,
     followerCount: 12500 + Math.floor(Math.random() * 90000),
     followingCount: 500 + Math.floor(Math.random() * 2000),
@@ -200,18 +200,18 @@ function generateDemoProfile(handle: string): NormalizedProfile {
 
 function generateDemoPosts(handle: string): NormalizedPost[] {
   const captions = [
-    'Novidade chegando! Fique ligado 🔥',
-    'Transforme sua rotina com qualidade ✨',
-    'Resultados que falam por si! 💪',
-    'Lancamento exclusivo! Corre! 🚀',
-    'Sabado de cuidados pessoais 💬',
-    'Bastidores da producao 🏭',
-    'Promocao de verao! Ate 40% OFF ☀️',
-    'Dica do especialista 📋',
-    'Obrigado por 10k seguidores! 🎉',
-    'Novo tutorial no feed! 📌',
-    'Parceria especial essa semana 🤝',
-    'Conheca nossa equipe 👥',
+    'Novidade chegando! Fique ligado',
+    'Transforme sua rotina com qualidade',
+    'Resultados que falam por si!',
+    'Lancamento exclusivo! Corre!',
+    'Sabado de cuidados pessoais',
+    'Bastidores da producao',
+    'Promocao de verao! Ate 40% OFF',
+    'Dica do especialista',
+    'Obrigado por 10k seguidores!',
+    'Novo tutorial no feed!',
+    'Parceria especial essa semana',
+    'Conheca nossa equipe',
   ];
 
   return Array.from({ length: 18 }, (_, i) => {

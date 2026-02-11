@@ -2,6 +2,7 @@
 
 import { CLS } from '@/lib/design-tokens';
 import { Badge, HelpBadge, SentBar, IntBar } from './ui';
+import { Bot } from '@/components/icons';
 import type { MockComment } from '@/lib/mock-data';
 
 interface AiExplainerProps {
@@ -15,7 +16,7 @@ export default function AiExplainer({ comment }: AiExplainerProps) {
   return (
     <div className="bg-white/[0.03] rounded-xl border border-[#E1306C]/20 p-5 space-y-4 shadow-sm">
       <h4 className="font-semibold text-white/90 flex items-center gap-2">
-        🤖 Como a IA processou este comentario
+        <Bot size={20} /> Como a IA processou este comentario
         <HelpBadge text="A IA analisa texto, contexto e padroes para classificar e responder" />
       </h4>
 

@@ -5,7 +5,7 @@ import { useApp } from '@/context/app-context';
 import { generateMockComments, generateMockSessions, DEMO_METRICS } from '@/lib/mock-data';
 import { CLS, STAT, SSTAT } from '@/lib/design-tokens';
 import { Badge, Tooltip, HelpBadge, KPI, InfoCard } from '@/components/ui';
-import { BarChart3 } from '@/components/icons';
+import { BarChart3, Lightbulb } from '@/components/icons';
 
 export default function DashboardPage() {
   const { isDemo } = useApp();
@@ -29,7 +29,7 @@ export default function DashboardPage() {
       </div>
 
       {isDemo && (
-        <InfoCard icon="💡" title="Modo Demo Ativo">
+        <InfoCard icon={<Lightbulb size={20} className="text-amber-400" />} title="Modo Demo Ativo">
           Dados simulados. Para conectar sua conta real, va em <strong className="text-white/70">Contas</strong> → <strong className="text-white/70">&quot;Conectar Conta&quot;</strong>.
           Apos conectar, a IA comeca a responder automaticamente.
         </InfoCard>

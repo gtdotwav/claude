@@ -62,11 +62,11 @@ export function KPI({
 export function EmptyState({
   icon, title, description, action, onAction,
 }: {
-  icon: string; title: string; description: string; action?: string; onAction?: () => void;
+  icon: React.ReactNode; title: string; description: string; action?: string; onAction?: () => void;
 }) {
   return (
     <div className="flex flex-col items-center justify-center py-20 px-4 text-center">
-      <span className="text-5xl mb-5 block">{icon}</span>
+      <div className="mb-5 text-white/15">{icon}</div>
       <h3 className="text-lg font-bold text-white/90 mb-2">{title}</h3>
       <p className="text-sm text-white/30 max-w-md mb-8 leading-relaxed">{description}</p>
       {action && (
@@ -160,11 +160,11 @@ export function StepIndicator({ steps, current }: { steps: string[]; current: nu
   );
 }
 
-export function InfoCard({ icon, title, children }: { icon: string; title: string; children: ReactNode }) {
+export function InfoCard({ icon, title, children }: { icon: React.ReactNode; title: string; children: ReactNode }) {
   return (
     <div className="rounded-2xl p-5 border bg-white/[0.03] border-white/[0.06]">
       <div className="flex items-start gap-3">
-        <span className="text-xl flex-shrink-0 mt-0.5">{icon}</span>
+        <div className="flex-shrink-0 mt-0.5 text-white/30">{icon}</div>
         <div>
           <h4 className="font-semibold text-white/90 mb-1 text-sm">{title}</h4>
           <div className="text-xs text-white/30 leading-relaxed">{children}</div>
