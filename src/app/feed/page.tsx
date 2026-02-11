@@ -105,7 +105,7 @@ export default function FeedPage() {
 
       {/* Tabs */}
       <div className="flex items-center justify-between">
-        <div className="flex gap-1 bg-white/[0.04] rounded-xl p-1">
+        <div className="flex gap-1 bg-white/[0.04] rounded-2xl p-1">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             return (
@@ -150,7 +150,7 @@ export default function FeedPage() {
             </div>
           ) : (
             <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 text-center">
-              <Clock size={32} className="mx-auto text-white/10 mb-3" />
+              <Clock size={32} className="mx-auto text-white/15 mb-3" />
               <p className="text-sm text-white/30">Selecione um post agendado para editar</p>
             </div>
           )}
@@ -164,10 +164,10 @@ export default function FeedPage() {
             <div className="sticky top-8">
               <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xs font-bold text-white/40 uppercase tracking-wider">
+                  <h3 className="text-[10px] font-semibold text-white/30 uppercase tracking-wider">
                     Preview do Feed
                   </h3>
-                  <div className="flex items-center gap-1 text-[9px] text-white/20">
+                  <div className="flex items-center gap-1 text-[9px] text-white/30">
                     <Sparkles size={9} />
                     Arraste para reordenar
                   </div>
@@ -196,7 +196,7 @@ export default function FeedPage() {
           <div className="lg:col-span-7 space-y-4">
             {/* Full Grid */}
             <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-4">
-              <h3 className="text-xs font-bold text-white/40 uppercase tracking-wider mb-3">
+              <h3 className="text-[10px] font-semibold text-white/30 uppercase tracking-wider mb-3">
                 Todos os Posts ({posts.length})
               </h3>
               <FeedGrid
@@ -218,9 +218,9 @@ export default function FeedPage() {
               </div>
             ) : (
               <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 text-center">
-                <LayoutGrid size={32} className="mx-auto text-white/10 mb-3" />
+                <LayoutGrid size={32} className="mx-auto text-white/15 mb-3" />
                 <p className="text-sm text-white/30">Clique em um post para editar</p>
-                <p className="text-[11px] text-white/20 mt-1">
+                <p className="text-[11px] text-white/30 mt-1">
                   Edite a legenda, hashtags, tipo de midia e agende a publicacao
                 </p>
               </div>

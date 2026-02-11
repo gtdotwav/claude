@@ -86,8 +86,8 @@ function AgentCardComponent({ agent }: { agent: AgentCard }) {
           'relative rounded-2xl p-5 h-full',
           'bg-white/[0.03] border border-white/[0.06]',
           'backdrop-blur-xl',
-          'hover:bg-white/[0.05] hover:border-white/[0.10]',
-          'transition-all duration-300'
+          'hover:bg-white/[0.04] hover:border-white/[0.10]',
+          'transition-all duration-200'
         )}
       >
         {/* Header */}
@@ -110,7 +110,7 @@ function AgentCardComponent({ agent }: { agent: AgentCard }) {
             </div>
             <div className="flex items-center gap-1 mt-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] text-white/25">Online agora</span>
+              <span className="text-[10px] text-white/30">Online agora</span>
             </div>
           </div>
         </div>
@@ -144,14 +144,14 @@ export function AgentMarquee() {
       <div className="text-center mb-10 px-4">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.06] mb-4">
           <Bot size={12} className="text-[#E1306C]" />
-          <span className="text-[10px] font-semibold text-white/40 uppercase tracking-wider">
+          <span className="text-[10px] font-semibold text-white/30 uppercase tracking-wider">
             Agentes IA Ativos
           </span>
         </div>
         <h2 className="text-2xl font-bold text-white/90 mb-2">
           Sua equipe de IA, <span className="hero-title-gradient">trabalhando 24/7</span>
         </h2>
-        <p className="text-sm text-white/30 max-w-lg mx-auto">
+        <p className="text-sm text-white/50 max-w-lg mx-auto">
           Cada agente cuida de uma parte do seu Instagram. Veja o que estao pensando agora.
         </p>
       </div>

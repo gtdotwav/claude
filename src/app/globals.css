@@ -3,15 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --primary: #0f172a;
-  --primary-light: #1e293b;
-  --accent: #6366f1;
-  --accent-hover: #4f46e5;
   --bg: #08080f;
+  --bg-elevated: #0c0c14;
   --card: rgba(255,255,255,0.03);
+  --card-hover: rgba(255,255,255,0.04);
   --border: rgba(255,255,255,0.06);
-  --text: #e0e0e0;
-  --text-secondary: rgba(255,255,255,0.4);
+  --border-hover: rgba(255,255,255,0.10);
+  --text: #e8e8ed;
+  --text-secondary: rgba(255,255,255,0.50);
+  --text-muted: rgba(255,255,255,0.30);
+  --text-disabled: rgba(255,255,255,0.15);
   --ig-pink: #E1306C;
   --ig-purple: #833AB4;
   --ig-orange: #F77737;
@@ -19,17 +20,18 @@
   --warning: #f59e0b;
   --danger: #ef4444;
   --info: #3b82f6;
-  --radius: 12px;
+  --radius: 16px;
   --hero-bg: #050508;
-  --hero-silver: #e0e0e0;
-  --hero-accent: #E1306C;
-  --hero-purple: #833AB4;
-  --hero-orange: #F77737;
   --hero-grain: 0.08;
 }
 
 * {
   border-color: var(--border);
+}
+
+::selection {
+  background: rgba(225, 48, 108, 0.25);
+  color: #fff;
 }
 
 body {
@@ -38,6 +40,7 @@ body {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 @layer utilities {

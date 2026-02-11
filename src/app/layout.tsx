@@ -39,7 +39,7 @@ function Sidebar() {
   return (
     <aside className="w-[260px] bg-[#080810] text-white fixed inset-y-0 z-20 flex flex-col border-r border-white/[0.06]">
       {/* Logo */}
-      <div className="h-16 flex items-center px-5 border-b border-white/[0.06]">
+      <div className="h-16 flex items-center px-5 border-b border-white/[0.06] bg-white/[0.02]">
         <div className="flex items-center gap-3">
           <div
             className={cn(
@@ -101,12 +101,12 @@ function Sidebar() {
       </nav>
 
       {/* Bottom Actions */}
-      <div className="px-3 pb-2 space-y-2">
+      <div className="px-3 pt-3 pb-2 space-y-2 border-t border-white/[0.06]">
         {isDemo && (
           <button
             onClick={() => setPhase('setup')}
             className={cn(
-              'w-full px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-300',
+              'w-full px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200',
               'bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737]',
               'text-white shadow-lg shadow-[#E1306C]/20 hover:shadow-[#E1306C]/30 hover:scale-[1.02]'
             )}
@@ -119,7 +119,7 @@ function Sidebar() {
         )}
         <button
           onClick={() => setPhase('hero')}
-          className="w-full px-3 py-2 rounded-xl text-[11px] text-white/25 hover:text-white/40 hover:bg-white/[0.03] transition-all flex items-center justify-center gap-1.5"
+          className="w-full px-3 py-2 rounded-xl text-[10px] text-white/25 hover:text-white/40 hover:bg-white/[0.03] transition-all duration-200 flex items-center justify-center gap-1.5"
         >
           <Settings size={12} />
           Voltar ao Inicio
@@ -138,8 +138,8 @@ function Sidebar() {
             GT
           </div>
           <div className="flex-1 min-w-0">
-            <div className="text-[13px] font-medium text-white/80">GTzen</div>
-            <div className="text-[10px] text-white/25">Admin</div>
+            <div className="text-[13px] font-medium text-white/90">GTzen</div>
+            <div className="text-[10px] text-white/30">Admin</div>
           </div>
           {isDemo && (
             <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-500/15 text-amber-400/80 border border-amber-500/20">

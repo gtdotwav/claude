@@ -345,7 +345,7 @@ export function AIAlpha({ className, onSubmit }: AIAlphaProps) {
             {/* Animated placeholder */}
             {!query && (
               <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                <span className="text-[14px] text-white/20">
+                <span className="text-[14px] text-white/15">
                   {displayText}
                   {isTyping && (
                     <span className="inline-block w-[2px] h-[14px] bg-[#E1306C]/50 ml-0.5 align-middle animate-pulse" />
@@ -391,7 +391,7 @@ export function AIAlpha({ className, onSubmit }: AIAlphaProps) {
                 onClick={() => setQuery(s)}
                 disabled={isLoading}
                 className={cn(
-                  'px-3 py-1.5 rounded-lg text-[10px] text-white/25 bg-white/[0.02] border border-white/[0.04]',
+                  'px-3 py-1.5 rounded-lg text-[10px] text-white/30 bg-white/[0.02] border border-white/[0.04]',
                   'hover:bg-white/[0.04] hover:text-white/40 hover:border-white/[0.08] transition-all',
                   isLoading && 'opacity-50 cursor-not-allowed'
                 )}

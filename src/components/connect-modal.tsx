@@ -181,7 +181,7 @@ export default function ConnectModal({ onClose, onConnect }: ConnectModalProps) 
                     return (
                       <div key={p.label} className="flex items-center gap-2.5">
                         <Icon size={12} className="text-white/15 flex-shrink-0" />
-                        <span className="text-xs text-white/35">{p.label}</span>
+                        <span className="text-xs text-white/30">{p.label}</span>
                       </div>
                     );
                   })}
@@ -189,7 +189,7 @@ export default function ConnectModal({ onClose, onConnect }: ConnectModalProps) 
               </div>
 
               {/* Requirement note */}
-              <p className="text-[11px] text-white/20 text-center">
+              <p className="text-[11px] text-white/30 text-center">
                 Requer conta Instagram <strong className="text-white/30">Business</strong> ou{' '}
                 <strong className="text-white/30">Creator</strong>
               </p>

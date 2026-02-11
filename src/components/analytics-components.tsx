@@ -136,7 +136,7 @@ export function ProfileHero({ profile, isDemo }: ProfileHeroProps) {
     : '—';
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden shadow-sm">
+    <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] overflow-hidden shadow-sm hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
       {/* Banner gradient */}
       <div className="h-28 bg-gradient-to-r from-[#833AB4]/20 via-[#E1306C]/15 to-[#F77737]/20 relative">
         {isDemo && (
@@ -181,7 +181,7 @@ export function ProfileHero({ profile, isDemo }: ProfileHeroProps) {
               )}
             </div>
             {profile.fullName && (
-              <p className="text-sm text-white/40 mt-0.5">{profile.fullName}</p>
+              <p className="text-sm text-white/50 mt-0.5">{profile.fullName}</p>
             )}
           </div>
 
@@ -314,11 +314,11 @@ export function KPICards({ profile, posts }: KPICardsProps) {
   ];
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3">
+    <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
       {kpis.map((kpi) => {
         const Icon = kpi.icon;
         return (
-          <div key={kpi.label} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 hover:shadow-lg hover:shadow-white/[0.02] transition-shadow">
+          <div key={kpi.label} className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-4 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
             <div className="flex items-center justify-between mb-3">
               <div className={cn('w-9 h-9 rounded-xl flex items-center justify-center', kpi.bg)}>
                 <Icon size={16} className={kpi.color} />
@@ -331,7 +331,7 @@ export function KPICards({ profile, posts }: KPICardsProps) {
             </div>
             <div className="text-xl font-black text-white/90">{kpi.value}</div>
             <div className="text-[10px] text-white/30 uppercase tracking-wider font-semibold mt-0.5">{kpi.label}</div>
-            <div className="text-[10px] text-white/20 mt-1">{kpi.subtext}</div>
+            <div className="text-[10px] text-white/30 mt-1">{kpi.subtext}</div>
           </div>
         );
       })}
@@ -365,10 +365,10 @@ export function ContentBreakdown({ posts }: ContentBreakdownProps) {
   const maxPct = Math.max(...types.map(t => t.pct), 1);
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
+    <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
       <div className="flex items-center gap-2 mb-5">
         <BarChart3 size={15} className="text-[#E1306C]" />
-        <h3 className="text-sm font-bold text-white/70">Tipo de Conteudo</h3>
+        <h3 className="text-sm font-semibold text-white/50">Tipo de Conteudo</h3>
       </div>
 
       <div className="space-y-4">
@@ -382,13 +382,13 @@ export function ContentBreakdown({ posts }: ContentBreakdownProps) {
                     <Icon size={13} />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-white/70">{t.type}</span>
-                    <span className="text-[10px] text-white/20 ml-2">{t.count} posts</span>
+                    <span className="text-xs font-bold text-white/90">{t.type}</span>
+                    <span className="text-[10px] text-white/30 ml-2">{t.count} posts</span>
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="text-xs font-black text-white/90">{t.pct.toFixed(0)}%</span>
-                  <div className="text-[9px] text-white/20">~{formatNumber(t.avgEng)} eng/post</div>
+                  <div className="text-[9px] text-white/30">~{formatNumber(t.avgEng)} eng/post</div>
                 </div>
               </div>
               <div className="h-2.5 bg-white/[0.04] rounded-full overflow-hidden">
@@ -444,11 +444,11 @@ export function PostingHeatmap({ posts }: PostingHeatmapProps) {
     d.engagement > (dayData[best]?.engagement || 0) ? i : best, 0);
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
+    <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2">
           <Clock size={15} className="text-[#E1306C]" />
-          <h3 className="text-sm font-bold text-white/70">Atividade de Publicacao</h3>
+          <h3 className="text-sm font-semibold text-white/50">Atividade de Publicacao</h3>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
@@ -468,7 +468,7 @@ export function PostingHeatmap({ posts }: PostingHeatmapProps) {
 
       {/* Hour distribution */}
       <div className="mb-5">
-        <h4 className="text-[10px] text-white/30 uppercase tracking-wider font-semibold mb-2">Por Hora</h4>
+        <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-wider mb-2">Por Hora</h4>
         <div className="flex items-end gap-0.5 h-16">
           {hourData.map((h, i) => (
             <div key={i} className="flex-1 flex flex-col items-center group relative">
@@ -496,11 +496,11 @@ export function PostingHeatmap({ posts }: PostingHeatmapProps) {
 
       {/* Day distribution */}
       <div>
-        <h4 className="text-[10px] text-white/30 uppercase tracking-wider font-semibold mb-2">Por Dia</h4>
+        <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-wider mb-2">Por Dia</h4>
         <div className="grid grid-cols-7 gap-1.5">
           {dayData.map((d, i) => (
             <div key={i} className="text-center group relative">
-              <div className="text-[9px] text-white/30 font-semibold mb-1">{dayNames[i]}</div>
+              <div className="text-[9px] font-semibold text-white/50 mb-1">{dayNames[i]}</div>
               <div
                 className={cn(
                   'w-full h-8 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all',
@@ -548,11 +548,11 @@ export function TopPosts({ posts, followerCount }: TopPostsProps) {
   }, [posts, followerCount, sortBy]);
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
+    <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] overflow-hidden hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
       <div className="px-5 py-3.5 border-b border-white/[0.04] flex items-center justify-between">
         <div className="flex items-center gap-2">
           <TrendingUp size={15} className="text-[#E1306C]" />
-          <h3 className="text-sm font-bold text-white/70">Top Posts</h3>
+          <h3 className="text-sm font-semibold text-white/50">Top Posts</h3>
         </div>
         <div className="flex gap-1 bg-white/[0.04] rounded-lg p-0.5">
           {([
@@ -576,7 +576,7 @@ export function TopPosts({ posts, followerCount }: TopPostsProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 bg-white/[0.06]">
         {sorted.slice(0, 9).map((post, i) => (
           <div key={post.id} className="bg-[#0c0c14] relative group">
             {/* Rank badge */}
@@ -615,7 +615,7 @@ export function TopPosts({ posts, followerCount }: TopPostsProps) {
             {/* Bottom metrics */}
             <div className="px-3 py-2 border-t border-white/[0.03]">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[10px] text-white/30">
+                <div className="flex items-center gap-2 text-[10px] text-white/50">
                   <span className="flex items-center gap-0.5">
                     <Heart size={9} className="text-rose-400" /> {formatNumber(post.likeCount)}
                   </span>
@@ -632,7 +632,7 @@ export function TopPosts({ posts, followerCount }: TopPostsProps) {
                   {post.engagementRate.toFixed(2)}%
                 </span>
               </div>
-              <p className="text-[9px] text-white/20 mt-1 truncate">{post.caption}</p>
+              <p className="text-[9px] text-white/30 mt-1 truncate">{post.caption}</p>
             </div>
 
             {/* Media type indicator */}
@@ -681,10 +681,10 @@ export function HashtagAnalysis({ posts }: HashtagAnalysisProps) {
 
   if (hashtags.length === 0) {
     return (
-      <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
+      <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
         <div className="flex items-center gap-2 mb-4">
           <Hash size={15} className="text-[#E1306C]" />
-          <h3 className="text-sm font-bold text-white/70">Hashtags</h3>
+          <h3 className="text-sm font-semibold text-white/50">Hashtags</h3>
         </div>
         <div className="text-center py-6">
           <Hash size={24} className="mx-auto text-white/10 mb-2" />
@@ -697,16 +697,16 @@ export function HashtagAnalysis({ posts }: HashtagAnalysisProps) {
   const maxCount = hashtags[0].count;
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
+    <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
       <div className="flex items-center gap-2 mb-4">
         <Hash size={15} className="text-[#E1306C]" />
-        <h3 className="text-sm font-bold text-white/70">Hashtags Mais Usadas</h3>
+        <h3 className="text-sm font-semibold text-white/50">Hashtags Mais Usadas</h3>
       </div>
 
       <div className="space-y-2">
         {hashtags.map((h, i) => (
           <div key={h.tag} className="flex items-center gap-2 group">
-            <span className="w-4 text-[9px] text-white/20 font-mono text-right">{i + 1}</span>
+            <span className="w-4 text-[9px] text-white/30 font-mono text-right">{i + 1}</span>
             <div className="flex-1 flex items-center gap-2">
               <div className="flex-1 h-6 bg-white/[0.04] rounded-md overflow-hidden relative">
                 <div
@@ -717,8 +717,8 @@ export function HashtagAnalysis({ posts }: HashtagAnalysisProps) {
                   {h.tag}
                 </span>
               </div>
-              <span className="text-[9px] text-white/20 w-16 text-right">{h.count}x</span>
-              <span className="text-[9px] text-white/20 w-20 text-right">~{formatNumber(h.avgEng)} eng</span>
+              <span className="text-[9px] text-white/30 w-16 text-right">{h.count}x</span>
+              <span className="text-[9px] text-white/30 w-20 text-right">~{formatNumber(h.avgEng)} eng</span>
             </div>
           </div>
         ))}
@@ -757,17 +757,17 @@ export function EngagementDistribution({ posts, followerCount }: EngagementDistr
   const maxCount = Math.max(...buckets.map(b => b.count), 1);
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
+    <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
       <div className="flex items-center gap-2 mb-5">
         <Target size={15} className="text-[#E1306C]" />
-        <h3 className="text-sm font-bold text-white/70">Distribuicao de Engajamento</h3>
+        <h3 className="text-sm font-semibold text-white/50">Distribuicao de Engajamento</h3>
       </div>
 
       <div className="flex items-end gap-2 h-32">
         {buckets.map((b) => (
           <div key={b.label} className="flex-1 flex flex-col items-center group relative">
             <div className="w-full flex flex-col items-center">
-              <span className="text-[9px] font-bold text-white/40 mb-1">
+              <span className="text-[9px] font-bold text-white/50 mb-1">
                 {b.count}
               </span>
               <div
@@ -778,7 +778,7 @@ export function EngagementDistribution({ posts, followerCount }: EngagementDistr
                 }}
               />
             </div>
-            <span className="text-[8px] text-white/20 mt-1.5 font-semibold">{b.label}</span>
+            <span className="text-[8px] text-white/30 mt-1.5 font-semibold">{b.label}</span>
           </div>
         ))}
       </div>
@@ -841,10 +841,10 @@ export function AccountHealth({ profile, posts }: AccountHealthProps) {
     score >= 70 ? '#22c55e' : score >= 45 ? '#3b82f6' : '#f59e0b';
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5">
+    <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
       <div className="flex items-center gap-2 mb-5">
         <Sparkles size={15} className="text-[#E1306C]" />
-        <h3 className="text-sm font-bold text-white/70">Saude da Conta</h3>
+        <h3 className="text-sm font-semibold text-white/50">Saude da Conta</h3>
       </div>
 
       {/* Overall Score */}
@@ -863,7 +863,7 @@ export function AccountHealth({ profile, posts }: AccountHealthProps) {
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-2xl font-black text-white/90">{metrics.overall}</span>
-            <span className="text-[8px] text-white/30 uppercase tracking-wider font-bold">Score</span>
+            <span className="text-[8px] font-semibold text-white/30 uppercase tracking-wider">Score</span>
           </div>
         </div>
       </div>
@@ -873,7 +873,7 @@ export function AccountHealth({ profile, posts }: AccountHealthProps) {
         {metrics.scores.map((s) => (
           <div key={s.label}>
             <div className="flex items-center justify-between mb-1">
-              <span className="text-[11px] font-semibold text-white/50">{s.label}</span>
+              <span className="text-[11px] font-semibold text-white/70">{s.label}</span>
               <span className="text-[10px] text-white/30">{s.detail}</span>
             </div>
             <div className="h-2 bg-white/[0.04] rounded-full overflow-hidden">

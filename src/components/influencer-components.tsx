@@ -70,7 +70,7 @@ export function InfluencerCard({ influencer }: InfluencerCardProps) {
   const niche = INFLUENCER_NICHES[influencer.niche];
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-white/[0.02] hover:border-white/[0.12] transition-all group">
+    <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200 group">
       {/* Cover / gradient */}
       <div
         className="h-24 relative"
@@ -122,36 +122,36 @@ export function InfluencerCard({ influencer }: InfluencerCardProps) {
           >
             {niche?.emoji} {niche?.l}
           </span>
-          <span className="text-[9px] text-white/20">{influencer.style}</span>
+          <span className="text-[9px] text-white/30">{influencer.style}</span>
         </div>
 
         {/* Stats */}
         <div className="mt-3 grid grid-cols-3 gap-2">
           <div className="text-center">
-            <div className="text-xs font-bold text-white/70">
+            <div className="text-xs font-bold text-white/50">
               {influencer.followerCount >= 1000
                 ? `${(influencer.followerCount / 1000).toFixed(1)}k`
                 : influencer.followerCount}
             </div>
-            <div className="text-[8px] text-white/20 uppercase">Seguidores</div>
+            <div className="text-[8px] text-white/15 uppercase">Seguidores</div>
           </div>
           <div className="text-center">
-            <div className="text-xs font-bold text-white/70">
+            <div className="text-xs font-bold text-white/50">
               {(influencer.engagementRate * 100).toFixed(1)}%
             </div>
-            <div className="text-[8px] text-white/20 uppercase">Engajamento</div>
+            <div className="text-[8px] text-white/15 uppercase">Engajamento</div>
           </div>
           <div className="text-center">
-            <div className="text-xs font-bold text-white/70">{influencer.postsCount}</div>
-            <div className="text-[8px] text-white/20 uppercase">Posts</div>
+            <div className="text-xs font-bold text-white/50">{influencer.postsCount}</div>
+            <div className="text-[8px] text-white/15 uppercase">Posts</div>
           </div>
         </div>
 
         {/* Coming soon overlay */}
-        <div className="mt-4 p-3 bg-white/[0.04] rounded-xl border border-white/[0.04] text-center">
-          <Lock size={14} className="mx-auto text-white/20 mb-1" />
+        <div className="mt-4 p-3 bg-white/[0.04] rounded-xl border border-white/[0.06] text-center">
+          <Lock size={14} className="mx-auto text-white/15 mb-1" />
           <p className="text-[10px] text-white/30 font-medium">Geracao de conteudo em breve</p>
-          <p className="text-[8px] text-white/20 mt-0.5">Integracao com Sora API</p>
+          <p className="text-[8px] text-white/30 mt-0.5">Integracao com Sora API</p>
         </div>
       </div>
     </div>
@@ -187,9 +187,9 @@ export function SoraPlaceholder() {
             ].map((f) => {
               const Icon = f.icon;
               return (
-                <div key={f.label} className="bg-white/[0.04] rounded-xl p-3 text-center border border-white/[0.06]">
+                <div key={f.label} className="bg-white/[0.04] rounded-2xl p-4 text-center border border-white/[0.06]">
                   <Icon size={16} className="mx-auto text-violet-400 mb-1.5" />
-                  <div className="text-[10px] font-bold text-white/70">{f.label}</div>
+                  <div className="text-[10px] font-bold text-white/50">{f.label}</div>
                   <div className="text-[8px] text-white/30">{f.desc}</div>
                 </div>
               );
@@ -236,10 +236,10 @@ export function AIStats({ influencers }: AIStatsProps) {
       {stats.map((s) => {
         const Icon = s.icon;
         return (
-          <div key={s.label} className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-3.5">
+          <div key={s.label} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4">
             <div className="flex items-center gap-2 mb-1.5">
               <Icon size={13} className={s.color} />
-              <span className="text-[9px] text-white/30 uppercase tracking-wider font-semibold">{s.label}</span>
+              <span className="text-[10px] text-white/30 uppercase tracking-wider font-semibold">{s.label}</span>
             </div>
             <div className="text-xl font-bold text-white/90">{s.value}</div>
           </div>

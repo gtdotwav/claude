@@ -442,8 +442,8 @@ export function PostMetricsCard({ post }: PostMetricsCardProps) {
     return (
       <div className="bg-[#0c0c14] border border-white/[0.06] rounded-2xl p-5">
         <div className="text-center py-4">
-          <BarChart3 size={24} className="mx-auto text-white/10 mb-2" />
-          <p className="text-[11px] text-white/20">
+          <BarChart3 size={24} className="mx-auto text-white/15 mb-2" />
+          <p className="text-[11px] text-white/30">
             Metricas disponiveis apos publicacao
           </p>
         </div>
@@ -462,7 +462,7 @@ export function PostMetricsCard({ post }: PostMetricsCardProps) {
     <div className="bg-[#0c0c14] border border-white/[0.06] rounded-2xl overflow-hidden">
       <div className="px-5 py-3 border-b border-white/[0.06] flex items-center gap-2">
         <TrendingUp size={13} className="text-[#E1306C]" />
-        <h3 className="text-xs font-bold text-white/70">Insights do Post</h3>
+        <h3 className="text-xs font-bold text-white/50">Insights do Post</h3>
       </div>
       <div className="grid grid-cols-2 gap-px bg-white/[0.04]">
         {metrics.map((m) => {
@@ -470,7 +470,7 @@ export function PostMetricsCard({ post }: PostMetricsCardProps) {
           const Icon = m.icon;
           return (
             <div key={m.key} className="bg-[#0c0c14] p-4 text-center">
-              <Icon size={14} className="mx-auto text-white/20 mb-1.5" />
+              <Icon size={14} className="mx-auto text-white/15 mb-1.5" />
               <div className="text-lg font-bold text-white/90">{meta.fmt(m.value)}</div>
               <div className="text-[9px] text-white/30 uppercase tracking-wider mt-0.5">{meta.l}</div>
             </div>
@@ -478,10 +478,10 @@ export function PostMetricsCard({ post }: PostMetricsCardProps) {
         })}
       </div>
       <div className="px-5 py-3 border-t border-white/[0.06] flex items-center justify-between">
-        <span className="text-[10px] text-white/20">
+        <span className="text-[10px] text-white/30">
           {post.commentCount} comentarios
         </span>
-        <span className="text-[10px] text-white/20">
+        <span className="text-[10px] text-white/30">
           Publicado {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('pt-BR') : '—'}
         </span>
       </div>
@@ -504,9 +504,9 @@ export function PublishingQueue({ posts, onSelect }: PublishingQueueProps) {
   if (scheduled.length === 0) {
     return (
       <div className="bg-[#0c0c14] border border-white/[0.06] rounded-2xl p-6 text-center">
-        <Clock size={24} className="mx-auto text-white/10 mb-2" />
+        <Clock size={24} className="mx-auto text-white/15 mb-2" />
         <p className="text-xs text-white/30">Nenhum post agendado</p>
-        <p className="text-[10px] text-white/15 mt-1">Agende posts no editor para ve-los aqui</p>
+        <p className="text-[10px] text-white/30 mt-1">Agende posts no editor para ve-los aqui</p>
       </div>
     );
   }
@@ -516,7 +516,7 @@ export function PublishingQueue({ posts, onSelect }: PublishingQueueProps) {
       <div className="px-5 py-3 border-b border-white/[0.06] flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Clock size={13} className="text-blue-400" />
-          <h3 className="text-xs font-bold text-white/70">Fila de Publicacao</h3>
+          <h3 className="text-xs font-bold text-white/50">Fila de Publicacao</h3>
         </div>
         <span className="text-[10px] text-blue-400/60 font-semibold">{scheduled.length} agendados</span>
       </div>
@@ -539,8 +539,8 @@ export function PublishingQueue({ posts, onSelect }: PublishingQueueProps) {
                 <img src={post.imageUrl} alt="" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-[11px] text-white/60 truncate">{post.caption.slice(0, 50)}...</p>
-                <p className="text-[9px] text-white/25 mt-0.5">
+                <p className="text-[11px] text-white/50 truncate">{post.caption.slice(0, 50)}...</p>
+                <p className="text-[9px] text-white/30 mt-0.5">
                   {schedDate.toLocaleDateString('pt-BR')} as {schedDate.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
                 </p>
               </div>
@@ -548,7 +548,7 @@ export function PublishingQueue({ posts, onSelect }: PublishingQueueProps) {
                 <div className="text-[10px] font-semibold text-blue-400/80">
                   {diffDays > 0 ? `${diffDays}d ${diffHours}h` : diffHours > 0 ? `${diffHours}h` : 'Agora'}
                 </div>
-                <div className="text-[8px] text-white/15 uppercase">restante</div>
+                <div className="text-[8px] text-white/30 uppercase">restante</div>
               </div>
             </button>
           );
@@ -749,10 +749,10 @@ export function FeedStats({ posts }: FeedStatsProps) {
       {stats.map((s) => {
         const Icon = s.icon;
         return (
-          <div key={s.label} className="bg-[#0c0c14] border border-white/[0.06] rounded-xl p-3.5">
+          <div key={s.label} className="bg-[#0c0c14] border border-white/[0.06] rounded-2xl p-3.5">
             <div className="flex items-center gap-2 mb-1.5">
               <Icon size={13} className={s.color} />
-              <span className="text-[9px] text-white/25 uppercase tracking-wider font-semibold">{s.label}</span>
+              <span className="text-[10px] text-white/30 uppercase tracking-wider font-semibold">{s.label}</span>
             </div>
             <div className="text-xl font-bold text-white/90">{s.value}</div>
           </div>

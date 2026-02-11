@@ -5,6 +5,7 @@ import { useApp } from '@/context/app-context';
 import { generateMockComments, generateMockSessions, DEMO_METRICS } from '@/lib/mock-data';
 import { CLS, STAT, SSTAT } from '@/lib/design-tokens';
 import { Badge, Tooltip, HelpBadge, KPI, InfoCard } from '@/components/ui';
+import { BarChart3 } from '@/components/icons';
 
 export default function DashboardPage() {
   const { isDemo } = useApp();
@@ -18,8 +19,11 @@ export default function DashboardPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white/90">Dashboard</h1>
-          <p className="text-sm text-white/40">Visao geral da automacao Instagram</p>
+          <div className="flex items-center gap-2.5">
+            <BarChart3 size={20} className="text-[#E1306C]" />
+            <h1 className="text-xl font-bold text-white/90">Dashboard</h1>
+          </div>
+          <p className="text-xs text-white/30 mt-1">Visao geral da automacao Instagram</p>
         </div>
         {isDemo && <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/20 text-sm px-3 py-1">Modo Demo</Badge>}
       </div>
@@ -46,9 +50,9 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-6">
+        <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
           <div className="flex items-center gap-2 mb-4">
-            <h3 className="font-semibold text-white/90">Classificacao IA</h3>
+            <h3 className="text-sm font-semibold text-white/50">Classificacao IA</h3>
             <HelpBadge text="A IA classifica cada comentario automaticamente" />
           </div>
           <div className="space-y-2.5">
@@ -59,9 +63,9 @@ export default function DashboardPage() {
                 <div key={item.cls}>
                   <div className="flex items-center gap-3">
                     <Tooltip text={cl?.desc || ''}>
-                      <span className="text-xs w-24 text-right text-white/40 cursor-help">{cl?.l}</span>
+                      <span className="text-xs w-24 text-right text-white/30 cursor-help">{cl?.l}</span>
                     </Tooltip>
-                    <div className="flex-1 bg-white/[0.06] rounded-full h-7 overflow-hidden">
+                    <div className="flex-1 bg-white/[0.06] rounded-full h-6 overflow-hidden">
                       <div
                         className="h-full rounded-full flex items-center justify-end pr-2 text-xs text-white font-semibold transition-all"
                         style={{ width: `${(item.count / max) * 100}%`, backgroundColor: cl?.c, minWidth: '2.5rem' }}
@@ -76,14 +80,14 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-6">
-          <h3 className="font-semibold text-white/90 mb-4">Comentarios Recentes</h3>
+        <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
+          <h3 className="text-sm font-semibold text-white/50 mb-4">Comentarios Recentes</h3>
           <div className="space-y-2 max-h-80 overflow-y-auto">
             {comments.map((c) => {
               const cl = CLS[c.classification];
               const st = STAT[c.actionStatus];
               return (
-                <div key={c.id} className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.06] transition-colors">
+                <div key={c.id} className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.04] transition-all duration-200">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: cl?.c }} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
@@ -91,7 +95,7 @@ export default function DashboardPage() {
                       <Badge className={cl?.bg || ''}>{cl?.l}</Badge>
                       <Badge className={st?.bg || ''}>{st?.l}</Badge>
                     </div>
-                    <p className="text-sm text-white/40 truncate mt-0.5">{c.text}</p>
+                    <p className="text-sm text-white/50 truncate mt-0.5">{c.text}</p>
                   </div>
                 </div>
               );
@@ -100,9 +104,9 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="bg-white/[0.03] rounded-xl border border-white/[0.06] p-6">
+      <div className="bg-white/[0.03] rounded-2xl border border-white/[0.06] p-5 hover:bg-white/[0.04] hover:border-white/[0.10] transition-all duration-200">
         <div className="flex items-center gap-2 mb-4">
-          <h3 className="font-semibold text-white/90">Sessoes DM Ativas</h3>
+          <h3 className="text-sm font-semibold text-white/50">Sessoes DM Ativas</h3>
           <HelpBadge text="DMs em andamento. Escaladas precisam atencao humana." />
         </div>
         {activeSes.length === 0 ? (
@@ -111,7 +115,7 @@ export default function DashboardPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-left text-white/40 border-b border-white/[0.06]">
+                <tr className="text-left text-white/30 border-b border-white/[0.06]">
                   <th className="pb-3 font-medium">Usuario</th>
                   <th className="pb-3 font-medium">Status</th>
                   <th className="pb-3 font-medium">Msgs</th>
@@ -123,7 +127,7 @@ export default function DashboardPage() {
                 {activeSes.map((s) => {
                   const sc = SSTAT[s.status] || SSTAT.active;
                   return (
-                    <tr key={s.id} className="border-b border-white/[0.04] last:border-0 hover:bg-white/[0.04]">
+                    <tr key={s.id} className="border-b border-white/[0.04] last:border-0 hover:bg-white/[0.04] transition-all duration-200">
                       <td className="py-3 font-medium text-white/90">@{s.igUsername}</td>
                       <td className="py-3">
                         <Badge className={sc.bg}>
@@ -132,9 +136,9 @@ export default function DashboardPage() {
                         </Badge>
                       </td>
                       <td className="py-3 text-white/70">{s.messageCount}</td>
-                      <td className="py-3 text-white/40 max-w-[200px] truncate">{s.lastUserMessage}</td>
+                      <td className="py-3 text-white/50 max-w-[200px] truncate">{s.lastUserMessage}</td>
                       <td className="py-3">
-                        <Badge className="bg-white/[0.04] text-white/40 border-white/[0.06]">{s.origin}</Badge>
+                        <Badge className="bg-white/[0.04] text-white/30 border-white/[0.06]">{s.origin}</Badge>
                       </td>
                     </tr>
                   );

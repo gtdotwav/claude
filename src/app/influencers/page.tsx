@@ -62,7 +62,7 @@ export default function InfluencersPage() {
 
       {filtered.length === 0 && (
         <div className="text-center py-12">
-          <Bot size={32} className="mx-auto text-white/10 mb-3" />
+          <Bot size={32} className="mx-auto text-white/15 mb-3" />
           <p className="text-sm text-white/30">Nenhum influencer neste nicho</p>
         </div>
       )}

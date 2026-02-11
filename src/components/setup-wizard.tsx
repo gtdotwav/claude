@@ -281,7 +281,7 @@ export default function SetupWizard({ onComplete, onSkipDemo }: SetupWizardProps
               <div className="mt-6 p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
                 <div className="flex items-center gap-2 mb-3">
                   <Shield size={14} className="text-white/30" />
-                  <span className="text-xs font-semibold text-white/40 uppercase tracking-wider">
+                  <span className="text-xs font-semibold text-white/30 uppercase tracking-wider">
                     Permissoes solicitadas
                   </span>
                 </div>
@@ -291,7 +291,7 @@ export default function SetupWizard({ onComplete, onSkipDemo }: SetupWizardProps
                     return (
                       <div key={p.label} className="flex items-center gap-2 py-1.5">
                         <Icon size={13} className="text-white/20 flex-shrink-0" />
-                        <span className="text-xs text-white/40">{p.label}</span>
+                        <span className="text-xs text-white/30">{p.label}</span>
                       </div>
                     );
                   })}

@@ -143,7 +143,7 @@ const HalideTopoHero: React.FC<HalideTopoHeroProps> = ({ onConfigure, onDemo }) 
                     <div className="text-[11px] font-semibold text-white/70 group-hover:text-white/90 transition-colors">
                       {f.label}
                     </div>
-                    <div className="text-[10px] text-white/25">{f.desc}</div>
+                    <div className="text-[10px] text-white/30">{f.desc}</div>
                   </div>
                 );
               })}
@@ -238,7 +238,7 @@ const HalideTopoHero: React.FC<HalideTopoHeroProps> = ({ onConfigure, onDemo }) 
                 className="relative rounded-xl p-4 bg-white/[0.02] border border-white/[0.04] backdrop-blur-sm text-center group hover:bg-white/[0.04] hover:border-white/[0.08] transition-all duration-300"
               >
                 <div className="text-xl font-bold hero-title-gradient">{stat.value}</div>
-                <div className="text-[10px] text-white/25 mt-1 uppercase tracking-wider">{stat.label}</div>
+                <div className="text-[10px] text-white/30 mt-1 uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>
