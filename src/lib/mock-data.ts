@@ -121,6 +121,15 @@ export interface MockAccount {
   totalDmsProcessed: number;
   totalAutoReplies: number;
   createdAt: string;
+  // Extended fields for live connected accounts
+  igName?: string;
+  igProfilePic?: string;
+  followers?: number;
+  following?: number;
+  postCount?: number;
+  biography?: string;
+  isVerified?: boolean;
+  category?: string;
 }
 
 export const DEMO_ACCOUNTS: MockAccount[] = [

@@ -7,7 +7,7 @@ import ConnectModal from '@/components/connect-modal';
 import { Smartphone, Link2, MessageCircle, Inbox, Bot } from '@/components/icons';
 
 export default function SettingsPage() {
-  const { accounts, setAccounts, isDemo, config } = useApp();
+  const { accounts, setAccounts, isDemo } = useApp();
   const [expanded, setExpanded] = useState<string | null>(accounts[0]?.id || null);
   const [showConnect, setShowConnect] = useState(false);
 
@@ -38,7 +38,6 @@ export default function SettingsPage() {
         <ConnectModal
           onClose={() => setShowConnect(false)}
           onConnect={(a: any) => setAccounts((p) => [a, ...p])}
-          config={config}
         />
       )}
 
