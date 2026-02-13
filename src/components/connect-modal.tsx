@@ -211,10 +211,36 @@ export default function ConnectModal({ onClose, onConnect }: ConnectModalProps) 
                 ) : (
                   <span className="flex items-center justify-center gap-3">
                     <Search size={16} />
-                    Buscar Perfil
+                    Buscar Perfil (modo lite)
                   </span>
                 )}
               </button>
+
+              {/* Official connect */}
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-xs font-semibold text-white/70">Conectar oficial (DMs)</div>
+                    <div className="text-[11px] text-white/30 mt-1">
+                      Necessário para ler e responder mensagens via API do Instagram.
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => {
+                      window.location.href = '/api/instagram/connect';
+                    }}
+                    className={cn(
+                      'px-3 py-2 rounded-xl text-[11px] font-bold text-white transition-all',
+                      'bg-white/[0.06] border border-white/[0.10] hover:bg-white/[0.08]'
+                    )}
+                  >
+                    Conectar
+                  </button>
+                </div>
+                <div className="mt-3 text-[10px] text-white/25">
+                  Setup necessário: META_APP_ID, META_APP_SECRET e webhook.
+                </div>
+              </div>
 
               {/* Error */}
               {error && (
